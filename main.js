@@ -1,16 +1,18 @@
-function updateTime() {
-    const now = new Date();
-    const timeString = now.toLocaleTimeString();
-    document.getElementById("clock").textContent = timeString;
+// Простая программа: генератор случайного числа
+function generateRandomNumber() {
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+    document.getElementById("randomNumber").textContent = `Случайное число: ${randomNumber}`;
 }
 
-setInterval(updateTime, 1000);
+// Создаем кнопку и элемент для вывода
+const button = document.createElement("button");
+button.textContent = "Сгенерировать число";
+button.onclick = generateRandomNumber;
 
-const clockElement = document.createElement("div");
-clockElement.id = "clock";
-clockElement.style.fontSize = "24px";
-clockElement.style.fontFamily = "Arial, sans-serif";
-clockElement.style.marginTop = "20px";
-document.body.appendChild(clockElement);
+document.body.appendChild(button);
 
-updateTime();
+const numberElement = document.createElement("div");
+numberElement.id = "randomNumber";
+numberElement.style.fontSize = "24px";
+numberElement.style.marginTop = "10px";
+document.body.appendChild(numberElement);
